@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Student Dashboard</h1>
+            <div class="nav-links">
+                <a href="#academic-progress">Academic Progress</a>
+                <a href="#performance-metrics">Performance Metrics</a>
+                <a href="#assessment-tracking">Assessment Tracking</a>
+                <a href="#settings">Settings</a>
+                <a href="#logout" class="logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="academic-progress">
+            <h2>Academic Progress</h2>
+            <p>Track your academic journey here.</p>
+            <div class="progress-card">
+                <h3>GPA</h3>
+                <p>3.8</p>
+            </div>
+            <div class="progress-card">
+                <h3>Completed Credits</h3>
+                <p>45/60</p>
+            </div>
+            <div class="progress-card">
+                <h3>Upcoming Exams</h3>
+                <p>2</p>
+            </div>
+        </section>
+
+        <section id="performance-metrics">
+            <h2>Performance Metrics</h2>
+            <p>Analyze your overall performance and academic metrics.</p>
+            <div class="metric-card">
+                <h3>Average Score</h3>
+                <p>88%</p>
+            </div>
+            <div class="metric-card">
+                <h3>Class Rank</h3>
+                <p>12th out of 100</p>
+            </div>
+        </section>
+
+        <section id="assessment-tracking">
+            <h2>Assessment Tracking</h2>
+            <p>Review your assessments and scores.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Assessment Name</th>
+                        <th>Score</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Math Test</td>
+                        <td>90%</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Science Project</td>
+                        <td>85%</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>History Quiz</td>
+                        <td>88%</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>English Essay</td>
+                        <td>Pending</td>
+                        <td>Not Submitted</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="window.location.href='submit-assessment.html'">Submit New Assessment</button>
+        </section>
+
+        <section id="settings">
+            <h2>Account Settings</h2>
+            <p>Update your personal information and preferences.</p>
+            <button>Edit Profile</button>
+            <button>Change Password</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Learning Outcomes Platform | All Rights Reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Learning Outcomes</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h1, p {
+            text-align: center;
+        }
+        form {
+            margin: 20px auto;
+            text-align: center;
+        }
+        form input, form button {
+            margin: 5px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Learning Outcomes</h1>
+
+    <!-- Server-side rendered student list using Thymeleaf -->
+    <section>
+        <h2>Student List (Server-Side)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Progress (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="student : ${students}">
+                    <td th:text="${student.id}">1</td>
+                    <td th:text="${student.name}">John Doe</td>
+                    <td th:text="${student.email}">john.doe@example.com</td>
+                    <td th:text="${student.progressPercentage}">85</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

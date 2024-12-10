@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Learning Outcomes Platform</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+        }
+        header p {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            color: #d9e6ff;
+        }
+
+        /* Login Options Section */
+        .login-options {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        /* Login Card Styles */
+        .login-card {
+            background-color: white;
+            color: #2575fc;
+            width: 280px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .login-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+        }
+        .login-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .login-card p {
+            font-size: 1.1rem;
+            margin: 0;
+            color: #555;
+        }
+
+        /* Register Button Styles */
+        .register-btn {
+            background-color: #2575fc;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .register-btn:hover {
+            background-color: #6a11cb;
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            color: white;
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .login-card {
+                width: 90%;
+            }
+            .register-btn {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to the Student Learning Outcomes Platform</h1>
+        <p>Track your progress and manage assessments effectively</p>
+    </header>
+
+    <!-- Login Options -->
+    <div class="login-options">
+        <div class="login-card" onclick="navigateToLogin('admin')">
+            <h3>Admin Login</h3>
+            <p>Access and manage assessments</p>
+        </div>
+        <div class="login-card" onclick="navigateToLogin('student')">
+            <h3>Student Login</h3>
+            <p>Track your progress and performance</p>
+        </div>
+    </div>
+
+    <!-- Register Button -->
+    <button class="register-btn" onclick="navigateToRegister()">Register</button>
+
+    <!-- Footer -->
+    <footer>
+        © 2024 Student Learning Outcomes Platform. All Rights Reserved.
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function navigateToLogin(role) {
+            if (role === 'admin') {
+                window.location.href = '/admin-login.html';
+            } else if (role === 'student') {
+                window.location.href = '/student-login.html';
+            }
+        }
+
+        function navigateToRegister() {
+            window.location.href = '/register.html';
+        }
+    </script>
+</body>
+</html>

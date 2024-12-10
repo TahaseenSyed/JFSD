@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Students</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f3f7f9; /* Soft light background color */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #6200ea; /* Rich purple */
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            background-color: #03a9f4; /* Teal/Blue button */
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #0288d1; /* Darker teal on hover */
+        }
+
+        /* Main Content */
+        .student-list-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #6200ea; /* Rich purple */
+            text-align: center;
+        }
+
+        /* Table Styling */
+        .student-table-wrapper {
+            overflow-x: auto;
+        }
+
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .student-table th,
+        .student-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .student-table th {
+            background-color: #6200ea; /* Purple header */
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .student-table td {
+            background-color: #e3f2fd; /* Light blue background */
+            font-size: 1rem;
+        }
+
+        .student-table tr:hover {
+            background-color: #f1f8e9; /* Light greenish background on hover */
+        }
+
+        .view-btn {
+            color: #fff;
+            background-color: #ff4081; /* Coral pink button */
+            padding: 8px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-btn:hover {
+            background-color: #f50057; /* Darker coral on hover */
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6200ea; /* Purple footer */
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .student-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Manage Students</h1>
+            <div class="nav-links">
+                <a href="/admin/manage-assessments">Manage Assessments</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="student-list-section">
+            <h2>Student List</h2>
+            <div class="student-table-wrapper">
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Average Score</th>
+                            <th>Last Activity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="student : ${students}">
+                            <td th:text="${student.name}">Student Name</td>
+                            <td th:text="${student.averageScore}">Score</td>
+                            <td th:text="${student.lastActivity}">Last Activity</td>
+                            <td><a th:href="@{/admin/view-student-details/{id}(id=${student.id})}" class="view-btn">View Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Learning Outcomes Platform | All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>

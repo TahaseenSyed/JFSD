@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Admin Dashboard</h1>
+            <div class="nav-links">
+                <a href="#manage-assessments">Manage Assessments</a>
+                <a href="#student-progress">Student Progress</a>
+                <a href="#settings">Settings</a>
+                <a href="#logout" class="logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview" class="overview-section">
+            <div class="overview-container">
+                <div class="overview-card">
+                    <h2>Total Students</h2>
+                    <p class="stat">150</p>
+                </div>
+                <div class="overview-card">
+                    <h2>Total Assessments</h2>
+                    <p class="stat">45</p>
+                </div>
+                <div class="overview-card">
+                    <h2>Upcoming Deadlines</h2>
+                    <p class="stat">3</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="manage-assessments" class="section-container">
+            <h2>Manage Assessments</h2>
+            <p class="section-description">Here you can create, edit, and delete assessments.</p>
+            <form action="/admin/save" method="POST">
+                <h3>Create New Assessment</h3>
+                <input type="text" name="name" placeholder="Assessment Name" required>
+                <input type="date" name="dueDate" required>
+                <button type="submit">Save</button>
+            </form>
+            <table class="assessment-table">
+                <thead>
+                    <tr>
+                        <th>Assessment Name</th>
+                        <th>Due Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Math Test</td>
+                        <td>2024-12-20</td>
+                        <td>
+                            <!-- Only one Edit and Delete button per assessment -->
+                            <button onclick="editAssessment(1)">Edit</button>
+                            <button onclick="deleteAssessment(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Science Project</td>
+                        <td>2024-12-25</td>
+                        <td>
+                            <!-- Only one Edit and Delete button per assessment -->
+                            <button onclick="editAssessment(2)">Edit</button>
+                            <button onclick="deleteAssessment(2)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Edit Assessment JavaScript -->
+            <script>
+                function editAssessment(id) {
+                    window.location.href = `EditAssessment.html?id=${id}`;
+                }
+
+                function deleteAssessment(id) {
+                    // Simple confirmation before deleting an assessment
+                    if (confirm("Are you sure you want to delete this assessment?")) {
+                        // Make a request to delete the assessment (dummy implementation)
+                        alert('Assessment deleted: ' + id);
+                    }
+                }
+            </script>
+        </section>
+
+        <section id="student-progress" class="section-container">
+            <h2>Student Progress</h2>
+            <p class="section-description">Monitor student performance and progress.</p>
+            <table class="student-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Average Score</th>
+                        <th>Last Activity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>85%</td>
+                        <td>2024-12-05</td>
+                        <td>
+                        	<a href="/admin/view-student-details/1">
+                            <button class="action-button">View Details</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>90%</td>
+                        <td>2024-12-06</td>
+                        <td>
+                        	<a href="/admin/view-student-details/2">
+                            <button class="action-button">View Details</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="settings" class="section-container">
+            <h2>Account Settings</h2>
+            <p class="section-description">Manage your admin account settings here.</p>
+            <button class="cta-button">Edit Profile</button>
+            <button class="cta-button">Change Password</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Learning Outcomes Platform | All Rights Reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

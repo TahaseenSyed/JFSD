@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Admin Dashboard</h1>
+            <div class="nav-links">
+                <a href="/admin/manage-assessments">Manage Assessments</a>
+                <a href="/admin/student-progress">Student Progress</a>
+                <a href="/admin/settings">Settings</a>
+                <a href="/logout" class="logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="create-assessment" class="section-container">
+            <h2>Create New Assessment</h2>
+            <form action="/admin/save" method="POST">
+                <div>
+                    <label for="name">Assessment Name:</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div>
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" name="dueDate" required />
+                </div>
+                <button type="submit" class="cta-button">Create Assessment</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Learning Outcomes Platform | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

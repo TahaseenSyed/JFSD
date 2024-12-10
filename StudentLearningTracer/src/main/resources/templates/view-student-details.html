@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3a8dff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #e76a00;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-container {
+            text-align: center;
+        }
+
+        .details-container h2 {
+            color: #3a8dff;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .details-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .details-card p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .details-card p strong {
+            color: #3a8dff;
+        }
+
+        footer {
+            background-color: #2d3a3a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: #ff8c00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Student Details</h1>
+            <div class="nav-links">
+                <a href="/admin/manage-students">Back to Students List</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="details-container">
+            <h2>Student Profile</h2>
+            <div class="details-card">
+                <p><strong>Name:</strong> ${student.name}</p>
+                <p><strong>Average Score:</strong> ${student.averageScore}%</p>
+                <p><strong>Last Activity:</strong> ${student.lastActivity}</p>
+                <p><strong>Courses Enrolled:</strong> ${student.courses}</p>
+                <p><strong>Attendance Rate:</strong> ${student.attendanceRate}%</p>
+                <!-- Add more details as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Learning Outcomes Platform | All Rights Reserved</p>
+        <div class="footer-links">
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms & Conditions</a>
+        </div>
+    </footer>
+</body>
+</html>

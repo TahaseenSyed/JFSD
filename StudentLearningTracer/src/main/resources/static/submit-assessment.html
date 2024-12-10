@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Assessment</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3e6ff;
+            color: #333;
+        }
+
+        header {
+            background: #8a2be2; /* Purple color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            border-bottom: 3px solid #ba55d3; /* Light purple */
+        }
+
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #333;
+        }
+
+        input, select {
+            padding: 14px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input:focus, select:focus {
+            border-color: #8a2be2; /* Purple focus color */
+        }
+
+        input[type="number"] {
+            width: 100px;
+        }
+
+        select {
+            width: 200px;
+        }
+
+        button[type="submit"] {
+            background-color: #8a2be2; /* Purple background */
+            color: white;
+            padding: 14px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 150px;
+            align-self: center;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ba55d3; /* Light purple on hover */
+        }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 30px;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            header {
+                font-size: 22px;
+            }
+
+            main {
+                width: 100%;
+                padding: 20px;
+            }
+
+            label, input, select, button {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Submit Your Assessment</h1>
+    </header>
+
+    <main>
+        <form action="/submit-assessment" method="POST">
+            <div>
+                <label for="assessment-name">Assessment Name:</label>
+                <input type="text" id="assessment-name" name="assessmentName" placeholder="Enter the assessment name" required>
+            </div>
+
+            <div>
+                <label for="score">Score (0-100):</label>
+                <input type="number" id="score" name="score" min="0" max="100" placeholder="Enter your score" required>
+            </div>
+
+            <div>
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="completed">Completed</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="pending">Pending</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit">Submit Assessment</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Application | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
